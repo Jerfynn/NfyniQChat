@@ -35,3 +35,4 @@ No build needed: on the iPhone, scan the QR code in NfyniQ Chat on the PC, then 
 Share → **Add to Home Screen**. A native iPhone build needs a Mac with Xcode and an Apple Developer
 account ($99/year) to install on other people's phones: `npx cap add ios`, then in `ios/App/App/Info.plist`
 add `NSAppTransportSecurity → NSAllowsLocalNetworking = YES` and an `NSLocalNetworkUsageDescription`.
+# NfyniQChat
