@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#16152D" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="NfyniQ">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="icon" href="/assets/icon-192.png">
+  <link rel="stylesheet" href="/app.css">
+  <title>NfyniQ Chat</title>
+</head>
+<body>
+
+<div class="splash" id="splash">
+  <svg class="splash-mark" viewBox="0 0 512 512" aria-hidden="true">
+    <rect class="tile" x="16" y="16" width="480" height="480" rx="112"/>
+    <g fill="none" stroke="#fff" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+      <path class="draw" pathLength="1" d="M140 126 L338 114 L170 228 C142 262 140 318 176 352 C214 388 290 392 334 368 C378 344 392 290 372 250 C352 210 304 192 258 202"/>
+      <path class="draw tail" pathLength="1" d="M226 310 C198 330 180 362 174 404"/>
+    </g>
+  </svg>
+  <div class="splash-word">NfyniQ <span>Chat</span></div>
+</div>
+
+<div class="onboard" id="onboard" hidden>
+  <div class="onboard-card" id="obCard"></div>
+</div>
+
+<div class="app" id="app">
+  <section class="view list-view" id="listView">
+    <header class="top">
+      <div class="top-row">
+        <h1>Chats</h1>
+        <button class="icon-btn" id="newGroupBtn" aria-label="New group"><i data-ic="usersPlus"></i></button>
+        <button class="icon-btn me-btn" id="meBtn" aria-label="Profile"></button>
+      </div>
+      <button class="conn" id="connPill"><span class="conn-dot"></span><span id="connText">Connecting…</span></button>
+      <label class="search"><i data-ic="search"></i><input id="search" placeholder="Search chats and messages" autocomplete="off" enterkeyhint="search"></label>
+    </header>
+    <div class="chat-list" id="chatList"></div>
+  </section>
+
+  <section class="view chat-view" id="chatView">
+    <header class="chat-head">
+      <button class="icon-btn" id="backBtn" aria-label="Back"><i data-ic="back"></i></button>
+      <div id="headAvatar" class="head-av"></div>
+      <div class="head-info" id="headInfo">
+        <div class="head-name" id="headName"></div>
+        <div class="head-status" id="headStatus"></div>
+      </div>
+      <button class="icon-btn" id="headMore" aria-label="More"><i data-ic="more"></i></button>
+    </header>
+    <div class="banner" id="offlineBanner" hidden><span class="spin"></span>Reconnecting to the PC…</div>
+    <div class="pin-bar" id="pinBar" hidden></div>
+    <div class="messages" id="messages"></div>
+    <button class="scroll-down" id="scrollDown" aria-label="Latest"><i data-ic="down"></i><span class="fab-badge" id="fabBadge" hidden></span></button>
+    <footer class="composer-wrap">
+      <div class="reply-bar" id="replyBar" hidden>
+        <div class="quote" id="replyQuote"></div>
+        <button class="icon-btn small" id="replyCancel" aria-label="Cancel"><i data-ic="x"></i></button>
+      </div>
+      <div class="composer" id="composer">
+        <button class="icon-btn" id="attachBtn" aria-label="Attach"><i data-ic="clip"></i></button>
+        <textarea id="input" rows="1" placeholder="Message" enterkeyhint="send"></textarea>
+        <button class="send-btn" id="sendBtn" aria-label="Send"><i data-ic="send"></i></button>
+      </div>
+      <div class="rec-bar" id="recBar" hidden>
+        <button class="icon-btn" id="recCancel" aria-label="Discard"><i data-ic="trash"></i></button>
+        <span class="rec-dot"></span><span class="rec-time" id="recTime">0:00</span>
+        <div class="rec-meter" id="recMeter"></div>
+        <button class="send-btn ready" id="recSend" aria-label="Send voice"><i data-ic="send"></i></button>
+      </div>
+      <input type="file" id="fileInput" multiple hidden>
+    </footer>
+  </section>
+</div>
+
+<div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+<div class="sheet" id="sheet" hidden></div>
+
+<div class="viewer" id="viewer" hidden>
+  <div class="v-bar"><span id="vName"></span><a class="v-btn" id="vSave" download>Save</a><button class="v-btn" id="vClose">Close</button></div>
+  <div class="v-stage"><img id="vImg" alt=""></div>
+</div>
+
+<div class="alert-overlay" id="alertOverlay" hidden>
+  <div class="alert-card">
+    <div class="alert-icon"><i data-ic="siren"></i></div>
+    <div class="alert-from" id="alertFrom"></div>
+    <div class="alert-text" id="alertText"></div>
+    <button class="btn light" id="alertAck">Got it</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>

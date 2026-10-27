@@ -1,0 +1,17 @@
+{
+  "name": "nfyniq-chat-android",
+  "version": "2.2.0",
+  "private": true,
+  "description": "NfyniQ Chat for Android",
+  "scripts": {
+    "sync": "node scripts/copy-web.js && npx cap sync android",
+    "apk": "npm run sync && cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "6.2.0",
+    "@capacitor/core": "6.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "6.2.0"
+  }
+}

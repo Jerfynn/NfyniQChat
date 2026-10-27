@@ -1,0 +1,7 @@
+{
+  "appId": "com.nfyniq.chat",
+  "appName": "NfyniQ Chat",
+  "webDir": "www",
+  "server": { "androidScheme": "http", "cleartext": true },
+  "android": { "allowMixedContent": true, "backgroundColor": "#1A1270" }
+}
